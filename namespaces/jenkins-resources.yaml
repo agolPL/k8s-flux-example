@@ -11,23 +11,12 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  annotations:
-    pv.kubernetes.io/bind-completed: "yes"
-    pv.kubernetes.io/bound-by-controller: "yes"
-    volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/gce-pd
-  finalizers:
-  - kubernetes.io/pvc-protection
-  labels:
-    app.kubernetes.io/component: jenkins-master
-    app.kubernetes.io/instance: jenkins
-    app.kubernetes.io/name: jenkins
-    helm.sh/chart: jenkins-1.3.3
   name: jenkins
-  namespace: jenkins
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
+  volumeMode: Filesystem
   resources:
     requests:
-      storage: 8Gi
+      storage: 1Gi
 
