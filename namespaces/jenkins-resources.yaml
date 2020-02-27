@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: jenkins
+  name: test
 spec:
   finalizers:
   - kubernetes
@@ -12,7 +12,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: jenkins
-  namespace: jenkins
+  namespace: test
 spec:
   accessModes:
     - ReadWriteOnce
